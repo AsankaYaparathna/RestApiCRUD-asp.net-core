@@ -32,8 +32,8 @@ namespace RestApiCRUD
             services.AddDbContextPool<EmployeeDataContext>(option => option.UseSqlServer(
                 Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddSingleton<IEmployeeData, MockEmployeeData>();
-            //services.AddScoped<IEmployeeData, SqlEmployeeData>();
+            //services.AddSingleton<IEmployeeData, MockEmployeeData>();
+            services.AddScoped<IEmployeeData, SqlEmployeeData>();
 
 
         }
